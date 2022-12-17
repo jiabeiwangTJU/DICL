@@ -1,0 +1,8 @@
+addict
+numpy
+Pillow
+pyyaml
+yapf
+
+[:sys_platform == "win32"]
+regex
