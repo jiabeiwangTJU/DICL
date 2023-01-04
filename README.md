@@ -11,6 +11,16 @@ The project is based on [MMdetection](https://github.com/open-mmlab/mmdetection)
 
 We utilized cuda=11.3, pytorch=1.10.1, mmcv=1.2.6, mmdet=2.4.0
 
+    conda create -n dicl python=3.7 -y
+    conda activate dicl
+    conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch-lts -c nvidia
+    cd mmcv
+    MMCV_WITH_OPS=1 pip install -e .
+    cd ..
+    pip install -r requirements/build.txt
+    pip install -v -e .
+    conda install -c conda-forge faiss=*=*_cuda
+    pip install  mmpycocotools
 
 ## Dataset
 
@@ -29,7 +39,7 @@ For PRW, change the path of your dataset and the annotaion file in the [config f
    sh train.sh
    ```
   2. Test CUHK-SYSU
-Download trained CUHK [checkpoint](https://drive.google.com/file/d/1wvGUTOvncs-tjKCfSRnZLJiZt6AZ4461/view?usp=sharing).
+Download trained CUHK [checkpoint](https://pan.baidu.com/s/1AUoGBjHbW5FQ9BCE8BvR-w). [loub]
    ```bash
    cd jobs/cuhk/
    sh test.sh
@@ -40,7 +50,7 @@ Download trained CUHK [checkpoint](https://drive.google.com/file/d/1wvGUTOvncs-t
    sh train.sh
    ```
    4. Test PRW
-Download trained PRW [checkpoint](https://drive.google.com/file/d/10MftT96ldoZU9mlTu1WYthxprRs0zd1j/view?usp=sharing).
+Download trained PRW [checkpoint](https://pan.baidu.com/s/1NToXjBkc6DlAPgne9mU-zw). [242a]
    Change the paths in L125 in [test_results_prw.py](tools/test_results_prw.py)
    ```bash
    cd jobs/prw
@@ -51,8 +61,8 @@ Download trained PRW [checkpoint](https://drive.google.com/file/d/10MftT96ldoZU9
 
 |Dataset|Model|mAP|Rank1| Config | Link |
 |-----|-----|------|-----|------|-----|
-|CUHK-SYSU|DICL| 87.4%|88.8%|[cfg](configs/dicl/cuhk_dicl.py)| [model](https://drive.google.com/file/d/1wvGUTOvncs-tjKCfSRnZLJiZt6AZ4461/view?usp=sharing)| 
-|PRW|DICL|35.5%|80.9%|[cfg](configs/dicl/prw_dicl.py)| [model](https://drive.google.com/file/d/10MftT96ldoZU9mlTu1WYthxprRs0zd1j/view?usp=sharing)| 
+|CUHK-SYSU|DICL| 87.4%|88.8%|[cfg](configs/dicl/cuhk_dicl.py)| [model](https://pan.baidu.com/s/1AUoGBjHbW5FQ9BCE8BvR-w) [loub]| 
+|PRW|DICL|35.5%|80.9%|[cfg](configs/dicl/prw_dicl.py)| [model](https://pan.baidu.com/s/1NToXjBkc6DlAPgne9mU-zw) [242a]| 
 
 ## Reference Codes
 Thanks for the great projects of [CGPS](https://github.com/ljpadam/CGPS), [MMdetection](https://github.com/open-mmlab/mmdetection).
